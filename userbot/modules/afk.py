@@ -84,8 +84,8 @@ async def mention_afk(mention):
                 afk_str = f"`{int(seconds)}s` ago"
             if mention.sender_id not in USERS:
                 if AFKREASON:
-                    await mention.reply("I'm AFK right now."
-                                        f"\nBecause I'm `{AFKREASON}`."
+                    await mention.reply("Off slur."
+                                        f"\nkarena I'm `{AFKREASON}`."
                                         f"\nAFK since: {afk_str}")
                 else:
                     await mention.reply(str(choice(AFKSTR)))
@@ -94,8 +94,8 @@ async def mention_afk(mention):
             elif mention.sender_id in USERS:
                 if USERS[mention.sender_id] % randint(2, 4) == 0:
                     if AFKREASON:
-                        await mention.reply("I'm still AFK."
-                                            f"\nReason: `{AFKREASON}`."
+                        await mention.reply("Masih off slur."
+                                            f"\nKarena: `{AFKREASON}`."
                                             f"\nAFK from: {afk_str}")
                     else:
                         await mention.reply(str(choice(AFKSTR)))
@@ -157,8 +157,8 @@ async def afk_on_pm(sender):
                 afk_str = f"`{int(seconds)}s` ago"
             if sender.sender_id not in USERS:
                 if AFKREASON:
-                    await sender.reply("I'm AFK right now."
-                                       f"\nReason: `{AFKREASON}`."
+                    await sender.reply("Off slur."
+                                       f"\nkarena: `{AFKREASON}`."
                                        f"\nAFK since: {afk_str}")
                 else:
                     await sender.reply(str(choice(AFKSTR)))
@@ -167,8 +167,8 @@ async def afk_on_pm(sender):
             elif apprv and sender.sender_id in USERS:
                 if USERS[sender.sender_id] % randint(2, 4) == 0:
                     if AFKREASON:
-                        await sender.reply("I'm still AFK."
-                                           f"\nReason: `{AFKREASON}`."
+                        await sender.reply("Masih off slur."
+                                           f"\nKarena: `{AFKREASON}`."
                                            f"\nAFK from: {afk_str}")
                     else:
                         await sender.reply(str(choice(AFKSTR)))
@@ -195,10 +195,10 @@ async def set_afk(afk_e):
     afk_start = start1.replace(microsecond=0)
     if string:
         AFKREASON = string
-        await afk_e.edit("Going AFK!"
-                         f"\nReason: `{string}`")
+        await afk_e.edit("Off slur!"
+                         f"\nkarena: `{string}`")
     else:
-        await afk_e.edit("Going AFK!")
+        await afk_e.edit("Off slur!")
     if BOTLOG:
         await afk_e.client.send_message(BOTLOG_CHATID, "#AFK\nYou went AFK!")
     ISAFK = True
