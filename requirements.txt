@@ -43,4 +43,5 @@ urbandict
 wikipedia
 telegraph
 python-dateutil
+wget
 git+https://github.com/johnwmillr/LyricsGenius.git
